@@ -80,4 +80,36 @@ export class LinkedList {
         currentNode.nextNode = null;
         return value;
     }
+
+    contains = (value) => {
+        let currentNode = this.headNode;
+        while(currentNode){
+            if(value === currentNode.value) return true;
+            currentNode = currentNode.nextNode;
+        }
+        return false;
+    }
+
+    findIndex = (value) => {
+        let currentNode = this.headNode;
+        let count = -1;
+        while(currentNode){
+            if(value === currentNode.value) return ++count;
+            count++;
+            currentNode = currentNode.nextNode;
+        }
+        return -1;
+    }
+
+    toString = () => {
+        if(!this.headNode) return null;
+        let currentNode = this.headNode;
+        let string = "";
+        while(currentNode){
+            string += `( ${currentNode.value} ) -> `;
+            currentNode = currentNode.nextNode;
+        }
+        string += "null";
+        return string;
+    }
 }

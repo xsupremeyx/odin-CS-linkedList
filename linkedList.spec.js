@@ -84,7 +84,7 @@ describe('LinkedList', () => {
         expect(linkedList.tail()).toBe("hamster");
     });
 
-    it.skip('should have working contains(value) method', () => {
+    it('should have working contains(value) method', () => {
         expect(linkedList.contains("cat")).toBe(false);
         linkedList.append("dog");
         linkedList.append("cat");
@@ -97,7 +97,7 @@ describe('LinkedList', () => {
         expect(linkedList.contains("monkey")).toBe(false);
     });
 
-    it.skip('should have working findIndex(value) method', () => {
+    it('should have working findIndex(value) method', () => {
         expect(linkedList.findIndex("cat")).toBe(-1);
         linkedList.append("dog");
         linkedList.append("cat");
@@ -110,8 +110,8 @@ describe('LinkedList', () => {
         expect(linkedList.findIndex("monkey")).toBe(-1);
     });
 
-    it.skip('should have working toString() Method', () => {
-        expect(linkedList.toString()).toBe("null");
+    it('should have working toString() Method', () => {
+        expect(linkedList.toString()).toBeNull();
         linkedList.append("dog");
         linkedList.append("cat");
         linkedList.append("parrot");
