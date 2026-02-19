@@ -14,7 +14,7 @@ describe('LinkedList', () => {
         linkedList.append("turtle");
     });
 
-    it.skip('should add elements to the beginning of the list', () => {
+    it('should add elements to the beginning of the list', () => {
         linkedList.prepend("dog");
         linkedList.prepend("cat");
         linkedList.prepend("parrot");
@@ -23,7 +23,8 @@ describe('LinkedList', () => {
         linkedList.prepend("turtle");
     });
 
-    it.skip('should have working size() method', () => {
+    it('should have working size() method', () => {
+        expect(linkedList.size()).toBe(0);
         linkedList.append("dog");
         linkedList.append("cat");
         linkedList.append("parrot");
@@ -33,7 +34,7 @@ describe('LinkedList', () => {
         expect(linkedList.size()).toBe(6);
     });
 
-    it.skip('should have working head() method', () => {
+    it('should have working head() method', () => {
         expect(linkedList.head()).toBeUndefined();
         linkedList.append("dog");
         linkedList.append("cat");
@@ -44,7 +45,7 @@ describe('LinkedList', () => {
         expect(linkedList.head()).toBe("dog");
     });
 
-    it.skip('should have working tail() method', () => {
+    it('should have working tail() method', () => {
         expect(linkedList.tail()).toBeUndefined();
         linkedList.append("dog");
         linkedList.append("cat");
@@ -55,7 +56,8 @@ describe('LinkedList', () => {
         expect(linkedList.tail()).toBe("turtle");
     });
 
-    it.skip('should have working at(index) method', () => {
+    it('should have working at(index) method', () => {
+        expect(linkedList.at(0)).toBeUndefined();
         linkedList.append("dog");
         linkedList.append("cat");
         linkedList.append("parrot");
@@ -70,7 +72,7 @@ describe('LinkedList', () => {
         expect(linkedList.at(5)).toBe("turtle");
     });
 
-    it.skip('should have working pop() method', () => {
+    it('should have working pop() method', () => {
         linkedList.append("dog");
         linkedList.append("cat");
         linkedList.append("parrot");
