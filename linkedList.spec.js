@@ -121,7 +121,7 @@ describe('LinkedList', () => {
         expect(linkedList.toString()).toBe("( dog ) -> ( cat ) -> ( parrot ) -> ( hamster ) -> ( snake ) -> ( turtle ) -> null");
     });
 
-    it.skip('should have working insertAt(index, ...values) method', () => {
+    it('should have working insertAt(index, ...values) method', () => {
         linkedList.append("dog");
         linkedList.append("cat");
         linkedList.append("parrot");
@@ -132,7 +132,7 @@ describe('LinkedList', () => {
         expect(linkedList.toString()).toBe("( dog ) -> ( cat ) -> ( monkey ) -> ( rabbit ) -> ( parrot ) -> ( hamster ) -> ( snake ) -> ( turtle ) -> null");
     });
 
-    it.skip('index below 0 or above list size should throw RangeError for inderAt() method', () => {
+    it('index below 0 or above list size should throw RangeError for inderAt() method', () => {
         linkedList.append("dog");
         linkedList.append("cat");
         linkedList.append("parrot");
@@ -143,7 +143,7 @@ describe('LinkedList', () => {
         expect(() => linkedList.insertAt(7, "monkey")).toThrow(RangeError);
     });
 
-    it.skip('should have working removeAt(index) method', () => {
+    it('should have working removeAt(index) method', () => {
         linkedList.append("dog");
         linkedList.append("cat");
         linkedList.append("parrot");
@@ -154,7 +154,7 @@ describe('LinkedList', () => {
         expect(linkedList.toString()).toBe("( dog ) -> ( cat ) -> ( hamster ) -> ( snake ) -> ( turtle ) -> null");
     });
 
-    it.skip('index below 0 or above list size should throw RangeError for removeAt() method', () => {
+    it('index below 0 or above list size should throw RangeError for removeAt() method', () => {
         linkedList.append("dog");
         linkedList.append("cat");
         linkedList.append("parrot");

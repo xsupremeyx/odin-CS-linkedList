@@ -112,4 +112,52 @@ export class LinkedList {
         string += "null";
         return string;
     }
+
+    insertAt = (index, ...values) =>{
+        if(index < 0) throw RangeError("Index must be a non-negative integer");
+        if(index > this.size()) throw RangeError("Index must be less than or equal to list size");
+        if(index === 0){
+            for(let i = values.length - 1; i >= 0; i--){
+                this.prepend(values[i]);
+            }
+            return;
+        }
+        let currentNode = this.headNode;
+        let count = 0;
+        while(currentNode){
+            if(count === index - 1){
+                let nextNode = currentNode.nextNode;
+                for(let i = 0; i < values.length; i++){
+                    const newNode = new Node(values[i]);
+                    currentNode.nextNode = newNode;
+                    currentNode = newNode;
+                }
+                currentNode.nextNode = nextNode;
+                return;
+            }
+            count++;
+            currentNode = currentNode.nextNode;
+        }
+    }
+
+    removeAt = (index) => {
+        if (index < 0) throw RangeError("Index must be a non-negative integer");
+        if (index >= this.size()) throw RangeError("Index must be less than list size");
+        if (index === 0) {
+            const value = this.headNode.value;
+            this.headNode = this.headNode.nextNode;
+            return value;
+        }
+        let currentNode = this.headNode;
+        let count = 0;
+        while (currentNode) {
+            if (count === index - 1) {
+                const value = currentNode.nextNode.value;
+                currentNode.nextNode = currentNode.nextNode.nextNode;
+                return value;
+            }
+            count++;
+            currentNode = currentNode.nextNode;
+        }
+    }
 }
